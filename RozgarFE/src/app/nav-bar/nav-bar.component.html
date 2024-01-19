@@ -1,0 +1,25 @@
+<nav class="navbar">
+
+  <div class="brand-title">
+    <a routerLink="/home"><i class="fa-solid fa-hand-fist"></i> &nbsp; ROZGAAR</a>
+  </div>
+  
+  <!--Not logged in -->
+  <div class="nav-links" *ngIf = "!isLoggedIn">
+    <ul>
+      <li><a routerLink="/login"> <i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+      <li><a routerLink="/register"> <i class="fa-solid fa-user-plus"></i> Signup</a></li>
+    </ul>
+  </div>
+  <!-- Logged In -->
+  <div class="nav-links" *ngIf = "isLoggedIn">
+    <ul>
+      <li>{{user.name}}</li>
+      <li *ngIf="!labour"><a routerLink="/bids"><i class="fa-solid fa-eye"></i> View Bids</a></li>
+      <li *ngIf="labour"><a routerLink="/jobs"><i class="fa-solid fa-briefcase"></i> Jobs</a></li>
+      <li><a routerLink="/editprofile"> <i class="fas fa-edit"></i> Edit Profile</a></li>
+      <li><a (click)="logOut()"><i class="fas fa-sign-out"></i>Log Out</a></li>
+    </ul>
+  </div>
+
+</nav>

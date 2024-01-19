@@ -1,0 +1,19 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+     <div class="row">
+         <div class="col-md-6">
+                <form [formGroup]="regForm" class="box"> 
+                    <button type="button" (click)="isLabour = true">Labour</button> <button type="button" (click)="isLabour = false" active>Customer</button>
+
+					<input type="text" class ="form-control" placeholder="Username" formControlName="Name">
+					<input type="text" class ="form-control" placeholder="Contact Number" formControlName="contactNo">
+					<input *ngIf="isLabour" type="number" class ="form-control" placeholder="Age" formControlName="age">
+					<input *ngIf="isLabour" type="text" class ="form-control" placeholder="Profession" formControlName="prof">
+                    <input *ngIf="isLabour" type="text" class ="form-control" placeholder="Location" formControlName="location">
+                    <input type="password" class ="form-control" placeholder="Password" formControlName="password">
+
+                    <input type="submit" (click)="submit()"> 
+                </form>
+        </div>
+    </div>
+</div>

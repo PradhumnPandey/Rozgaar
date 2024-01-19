@@ -1,0 +1,77 @@
+.jobPane
+{
+    padding: 0.5%;
+    flex-flow: column;
+    width: 66.66%;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    overflow-y:auto ;
+    height: 500px;
+}
+
+.profilePane
+{
+    padding: 0.5%;
+    flex-flow: column;
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 33.3%;
+    box-sizing: border-box;
+    float: right;
+    text-align: center;
+}
+
+.container-fluid
+{
+    margin-top: 2%;
+}
+
+.card
+{
+    margin-top: 2%;
+    display: flow-root;
+}
+
+.details
+{
+    text-align: left;
+    margin: 2%;
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
+}
+.price
+{
+    text-align: center;
+    margin: 2%;
+    float: right;
+    width: 30%;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.filter
+{
+    height: 35px;
+    position: sticky;
+    top: 0;
+}
+
+.filter span
+{
+    height: 100%;
+    background: none;
+    display: inline-table;
+    transition: 0.25s;
+    border: solid 2px;
+    padding: 0.5%;
+    cursor: pointer;
+}
+
+.filter span :focus, .filter span:active
+{
+    background: #2ecc71;
+}
+

@@ -1,0 +1,51 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container mt-5 px-2">
+    
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+        
+        <div>
+            <input [(ngModel)] = "filterId" class="form-control w-100" placeholder="Search by order#" (keyup)="filter()">
+        </div>
+        
+        
+    </div>
+    <div class="table-responsive scroll">
+    <table class="table table-responsive table-borderless">
+        
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" width="5%">#</th>
+          <th scope="col" width="15%">Date</th>
+          <th scope="col" width="10%">Status</th>
+          <th scope="col">Labour</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="text-end"><span>Bid Amount</span></th>
+          <th></th>
+        </tr>
+      </thead>
+  <tbody>
+    <tr *ngFor="let bid of bids">
+      <td>{{bid.id}}</td>
+      <td>{{bid.bidDate | date : 'dd/MM/yyyy hh:mm'}}</td>
+      <td><span class="ms-1">
+        <span *ngIf="bid.status == 'Rejected'" class="badge bg-danger">{{bid.status}}</span>
+        <span *ngIf="bid.status == 'Pending'" class="badge bg-warning">{{bid.status}}</span>
+        <span *ngIf="bid.status == 'Completed'" class="badge bg-success">{{bid.status}}</span>
+        <span *ngIf="bid.status == 'Accepted'" class="badge bg-info">{{bid.status}}</span>
+      </span></td>
+      <td><img src="https://i.imgur.com/VKOeFyS.png" width="25">&nbsp; {{name(bid.labourId)}}</td>
+      <td>{{bid.descp.split("||")[3]}}</td>
+      <td class="text-end"><span class="fw-bolder">&#8377;{{bid.amount}}</span></td>
+      <td *ngIf="bid.status!='Completed'" style="text-align: right; width: 15%;">
+        <span *ngIf="bid.status!='Completed'" class="badge bg-danger" style="cursor: pointer;" (click)="delete(bid.id)"><i class="fa-solid fa-trash-can"></i></span>
+        &nbsp;
+        <span *ngIf="bid.status == 'Accepted'" class="badge bg-success" style="cursor: pointer;"  (click)="complete(bid)">Mark As Completed?</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  <h2 *ngIf="bids.length == 0" style="text-align: center;">No Bids Found!</h2>
+  </div>
+    
+</div>

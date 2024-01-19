@@ -1,0 +1,24 @@
+td
+{
+    padding-top: 1%;
+}
+.scroll
+{
+    height: 450px;
+    overflow-y: auto;
+    position: absolute;
+    width: 1100px;
+    scrollbar-width: 0;
+}
+thead
+{
+    position: sticky;
+    top: 0;
+}
+@media screen and (max-width:786px) {
+    .scroll
+    {
+        height: 600px;
+        width: 99%;
+    }
+}

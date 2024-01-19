@@ -1,0 +1,52 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container-fluid">
+
+
+<!--Jobs-->
+<div class="jobPane">
+
+    <!--Filters-->
+    <div class="card filter">
+        <span style="width: 33.33%;" (click)="filter('A')">New</span>
+        <span style="width: 33.33%;" (click)="filter('P')">In - Progress</span>
+        <span style="width: 33.33%;" (click)="filter('C')" active>Completed</span>
+    </div>
+    
+    <h2 *ngIf="filterJob.length == 0" style="text-align: center;">No Open Jobs Found!</h2>
+    <div class="card job" *ngFor="let job of filterJob">
+
+        <div class="details">
+            <h2>{{job.descp}} - #{{job.id}}</h2>
+            <h4>{{job.status}}</h4>
+            <h4>{{job.bidDate}}</h4>
+        </div>
+
+        <div class="price">
+            <br><h1>&#8377;{{job.amount}}</h1>
+            <button class="btn btn-success" *ngIf="job.status != 'Accepted' && job.status != 'Completed'" (click)="update(job,'Accepted')">Accept</button> &nbsp;
+            <button class="btn btn-danger" *ngIf="job.status != 'Rejected' && job.status != 'Completed'" (click)="update(job,'Rejected')">Reject</button>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!--Profile-->
+<div class="profilePane">
+
+    <div class="card">
+        <h1>{{usr.name}}</h1>
+
+        <h3>Total Earning</h3>
+        <h2>&#8377;{{totalEarning}}</h2>
+
+        <h3>In-Progress</h3>
+        <h2>{{inProgress}}</h2>
+
+        <h3>Completed</h3>
+        <h2>{{completed}}</h2>
+    </div>
+</div>
+
+</div>

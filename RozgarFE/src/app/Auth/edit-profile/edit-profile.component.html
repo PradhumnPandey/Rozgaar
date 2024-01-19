@@ -1,0 +1,19 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+     <div class="row">
+         <div class="col-md-6">
+                <form class="box"> 
+                    <button type="button" *ngIf="isLabour">Labour</button> <button type="button" *ngIf="!isLabour">Customer</button>
+
+					<input type="text" class ="form-control" name="name" placeholder="{{name}}" [(ngModel)] = "name">
+					<input type="text" class ="form-control" name="contactNo" placeholder="{{contactNo}}" [(ngModel)]="contactNo">
+					<input *ngIf="isLabour" type="number" name="age" class ="form-control" placeholder="{{age}}" [(ngModel)]="age">
+					<input *ngIf="isLabour" type="text" name="prof" class ="form-control" placeholder="{{prof}}" [(ngModel)]="prof">
+                    <input *ngIf="isLabour" type="text" name="location" class ="form-control" placeholder="{{location}}" [(ngModel)]="location">
+                    <input type="password" class ="form-control" name="password" placeholder="Password" [(ngModel)]="password">
+
+                    <input type="submit" (click)="submit()"> 
+                </form>
+        </div>
+    </div>
+</div>

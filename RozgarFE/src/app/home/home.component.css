@@ -1,0 +1,112 @@
+#search-box
+{
+    margin-left: 45%;
+}
+
+#search-prof,#search-loc
+{
+    height: 30px;
+    width: auto;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 2%;
+    text-align: center;
+    border: 1px solid;
+}
+
+#search-prof:focus,#search-loc:focus
+{
+    transition: 0.35s;
+    height: 35px;
+    width: auto;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 2%;
+    text-align: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@600&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+.h2{
+    color: #444;
+    font-family: 'PT Sans', sans-serif;
+    padding: 5%;
+}
+.thead{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: #666;
+    position: sticky;
+    top: 0;
+    background-color: black;
+}
+
+.name{
+    display: inline-block;
+}
+.bg-blue{
+    background-color: #EBF5FB;
+    border-radius: 8px;
+}
+
+.bg-blue:hover{
+    background-color: #3e64ff;
+    color: #eee;
+    cursor: pointer;
+}
+
+
+.table thead th,.table td{
+    border: none;
+}
+
+.table tbody td:first-child{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.table tbody td:last-child{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#spacing-row{
+    height: 10px;
+}
+
+.table-responsive
+{
+  height: 350px;
+  padding: 2%;
+  overflow-y: auto;
+  scrollbar-width: 0; 
+}
+
+@media(max-width:768px){
+    .container{
+        width: 95%;
+        padding: 20px 10px;
+        height: 600px;
+    }
+
+    .table-responsive
+    {
+        height: 75%;
+        padding: 0%;
+        overflow-y: auto;
+        scrollbar-width: 0; 
+    }
+    #search-box
+    {
+        display: flex;
+        margin: 5%;
+    }
+
+    #search-prof,#search-loc
+    {
+        width: 50%;
+    }
+}

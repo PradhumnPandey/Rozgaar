@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+body{
+    background-image: url("C:\code\Angular\Rozgar\src\assets\BG2.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+@media(max-width:768px) {
+    
+    body
+    {
+       background-size:auto;
+    }
+}

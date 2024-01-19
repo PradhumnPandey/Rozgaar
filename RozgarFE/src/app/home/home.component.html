@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container rounded mt-5 bg-white">
+<br>
+    <span class="h3 font-weight-bold" style="margin-top: 5%;">Helper's List</span>
+
+    <span id="search-box">
+    <input type="search" placeholder="Location" id="search-loc" [(ngModel)]="locSel" (keyup)="filter()">
+    <input type="search" placeholder="Profession" id="search-prof" [(ngModel)]="profSel" (keyup)="filter()">
+    </span>
+    
+    <div class=" table thead">
+        <tr>
+            <th scope="col" style="width: 5%;">#</th>
+            <th scope="col" style="width: 10%;">Name</th>                    
+            <th scope="col" style="width: 10%;">Profession</th>                    
+            <th scope="col" style="width: 10%;">Location</th>                    
+            <th scope="col" style="width: 10%;">Rating</th>
+            <th scope="col" style="width: 10%;">Action</th>                    
+        </tr>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            
+            <br>
+            <tbody *ngFor="let lbr of filteredData">
+                <tr class="bg-blue" (click)="openDialog(lbr,this.user)">            
+                    <td class="pt-3">
+                        {{lbr.id}}
+                    </td>                
+                    <td class="pt-3 mt-1">
+                        <div class="pl-lg-5 pl-md-3 pl-1 name">{{lbr.name}}<br>
+                        <span class="small">{{lbr.contactNo}}</span>
+                        </div>
+                    </td>
+                    <td class="pt-3">{{lbr.prof}}</td>
+                    <td class="pt-3">{{lbr.location}}</td>
+                    <td class="pt-3">{{lbr.rating}}</td>
+                </tr>
+                <tr id="spacing-row">
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

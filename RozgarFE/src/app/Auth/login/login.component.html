@@ -1,0 +1,17 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+     <div class="row">
+         <div class="col-md-6">
+             <div class="card">
+                <form [formGroup]="loginForm" class="box"> 
+                    <h1>Rozgaar</h1>
+                    <p class="text-muted"> Please enter your login and password!</p>
+                    <input type="text" class ="form-control" name="" placeholder="Mobile Number" formControlName="contactNumber">
+                    <input type="password" class ="form-control" name="" placeholder="Password" formControlName="pwd">
+                    <a class="forgot text-muted" href="#">Forgot password?</a> 
+                    <input type="submit" (click)="submit()"> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
